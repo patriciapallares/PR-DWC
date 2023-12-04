@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let vacio = []
+        let numArray = [1, 2, 3, 1, 6, 5, 2]
+        let strArray = ["uno", "dos", "tres"]
+        let objArray = [{ nombre: "Juan", edad: 18 }, { nombre: "Lucía", edad: 18 }, { nombre: "Pili", edad: 18 }]
+        let matrArray = [[2, 5][6, 3]]
+
+        console.log("Longitud numArray " + numArray.length);
+        console.log("Última posición numArray " + numArray[2]);
+
+        // calcula la suma de los elementos de un array
+
+        let suma = 0;
+        for (let i = 0; i < numArray.length; i++) {
+            let valor = numArray[i]
+            suma = suma + valor;
+        }
+
+  
+
+        // console.log("Suma de " + numArray + " es: " + suma);
+
+
+        let max = 0;
+
+        for (let i = 0; i < numArray.length; i++) {
+            if (numArray[i] > max) {
+                max = numArray[i];
+            }
+        }
+        //console.log("Valor mayor: " + max);
+
+        // frecuencia de elementos en un array
+
+        
+
+        for (let i = 0; i < numArray.length; i++) {
+            let contador = 0
+
+            for (let k = 0; k < numArray.length; k++) {
+                if (numArray[i] == numArray[k]) {
+                    contador++
+                }
+            }
+            
+            console.log("Valor " + numArray[i] + " Frecuencia: " + contador + "\n");
+        }
+
+        x=false;
+        y=true;
+        z= x&&y || y;
+
+        console.log(z);
+
+
+        function sumardos(numero1,numero2=6) {
+            var resultado= numero1 + numero2;
+            return "La suma es " + resultado;
+        }
+
+        console.log(sumardos(2));
+        console.log(sumardos(4,5));
+        
+        console.log(sumardos());
+        
+
+
+    </script>
+</body>
+
+</html>

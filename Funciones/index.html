@@ -1,14 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Funciones</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        
+      Funciones;
+
+      // 1.Crea una función que calcule el producto escalar de dos vectores,
+      // leyéndolos por pantalla.
+      function calcularProductoEscalar() {
+        // Pedir al usuario los elementos del primer vector
+        const vector1 = [];
+        const n = prompt("Ingrese la longitud de los vectores:");
+
+        for (let i = 0; i < n; i++) {
+          const elemento = parseFloat(
+            prompt(`Ingrese el elemento ${i + 1} del primer vector:`)
+          );
+          vector1.push(elemento);
+        }
+
+        // Pedir al usuario los elementos del segundo vector
+        const vector2 = [];
+        for (let i = 0; i < n; i++) {
+          const elemento = parseFloat(
+            prompt(`Ingrese el elemento ${i + 1} del segundo vector:`)
+          );
+          vector2.push(elemento);
+        }
+
+        // Calcular el producto escalar
+        let productoEscalar = 0;
+        for (let i = 0; i < n; i++) {
+          productoEscalar += vector1[i] * vector2[i];
+        }
+
+        // Mostrar el resultado
+        console.log(
+          `El producto escalar de los vectores es: ${productoEscalar}`
+        );
+      }
+
+      // Llamar a la función para realizar el cálculo
+      calcularProductoEscalar();
+
+      // 2.Realiza una función que calcule el producto de dos matrices de números reales, leyéndolos por pantalla.
+      function productoDeMatrices() {
+        // Pedir al usuario las dimensiones de las matrices
+        const filasMatriz1 = parseInt(
+          prompt("Ingrese el número de filas de la primera matriz:")
+        );
+        const columnasMatriz1 = parseInt(
+          prompt("Ingrese el número de columnas de la primera matriz:")
+        );
+
+        const filasMatriz2 = parseInt(
+          prompt("Ingrese el número de filas de la segunda matriz:")
+        );
+        const columnasMatriz2 = parseInt(
+          prompt("Ingrese el número de columnas de la segunda matriz:")
+        );
+
+        // Validar que las matrices sean compatibles para la multiplicación
+        if (columnasMatriz1 !== filasMatriz2) {
+          console.log(
+            "Error: Las matrices no son compatibles para la multiplicación."
+          );
+          return;
+        }
+
+        // Pedir al usuario los elementos de la primera matriz
+        const matriz1 = leerMatriz(filasMatriz1, columnasMatriz1, "primera");
+
+        // Pedir al usuario los elementos de la segunda matriz
+        const matriz2 = leerMatriz(filasMatriz2, columnasMatriz2, "segunda");
+
+        // Calcular el producto de las matrices
+        var resultado = multiplicarMatrices(matriz1, matriz2);
+
+        // Mostrar el resultado
+        console.log("El resultado del producto de matrices es:");
+        mostrarMatriz(resultado);
+      }
+
+      function leerMatriz(filas, columnas, nombre) {
+        const matriz = [];
+
+        console.log(`Ingrese los elementos de la ${nombre} matriz:`);
+        for (let i = 0; i < filas; i++) {
+          const fila = [];
+          for (let j = 0; j < columnas; j++) {
+            const elemento = parseFloat(
+              prompt(`Ingrese el elemento (${i + 1}, ${j + 1}):`)
+            );
+            fila.push(elemento);
+          }
+          matriz.push(fila);
+        }
+
+        return matriz;
+      }
+
+      function multiplicarMatrices(matriz1, matriz2) {
+        const filasMatriz1 = matriz1.length;
+        const columnasMatriz1 = matriz1[0].length;
+        const columnasMatriz2 = matriz2[0].length;
+
+        var resultado = [];
+
+        for (let i = 0; i < filasMatriz1; i++) {
+          resultado[i] = [];
+          for (let j = 0; j < columnasMatriz2; j++) {
+            let suma = 0;
+            for (let k = 0; k < columnasMatriz1; k++) {
+              suma += matriz1[i][k] * matriz2[k][j];
+            }
+            resultado[i][j] = suma;
+          }
+        }
+
+        return resultado;
+      }
+
+      function mostrarMatriz(matriz) {
+        for (let i = 0; i < matriz.length; i++) {
+          console.log(matriz[i].join(" "));
+        }
+      }
+
+      // Llamar a la función para realizar el cálculo
+      productoDeMatrices();
+
+      // 3. Crea una función llamada numeroMayor() que toma tres números como
+      // entrada y retorna el número mayor de ellos, si son iguales devolver un String «son iguales».
+      function numeroMayor(num1, num2, num3) {
+        if (num1 === num2 && num2 === num3) {
+          return "son iguales";
+        } else {
+          // Usamos el operador ternario para encontrar el número mayor
+          const mayor =
+            num1 >= num2 && num1 >= num3 ? num1 : num2 >= num3 ? num2 : num3;
+          return mayor;
+        }
+      }
+
+      // Ejemplo de uso
+      var resultado2 = numeroMayor(10, 5, 8);
+      console.log(resultado2);
+
+      // 4. Escriba una función con el nombre de esVocal() que tome un carácter , devuelve True si es vocal (no importa si es mayúscula o minúscula), y devuelva False en caso contrario.
+      function esVocal(caracter) {
+        // Convertir el carácter a minúscula para hacer la comparación
+        const caracterMinuscula = caracter.toLowerCase();
+
+        // Verificar si el carácter es una vocal
+        return ["a", "e", "i", "o", "u"].includes(caracterMinuscula);
+      }
+
+      // Ejemplo de uso
+      var resultado1 = esVocal("A");
+      console.log(resultado1); // Devuelve true
+
+      var resultado2 = esVocal("z");
+      console.log(resultado2); // Devuelve false
+
+      // 5.Crea una función llamada generar_caracteres() que tome como
+      // parámetro un número entero (n) y un carácter, retornar el carácter
+      // multiplicado por n. Por ejemplo, generar_caracteres(5,x), debería retornar «xxxxx».
+      function generar_caracteres(n, caracter) {
+        // Verificar si el primer parámetro es un número entero positivo
+        if (Number.isInteger(n) && n > 0) {
+          // Utilizar el método repeat() para repetir el carácter n veces
+          return caracter.repeat(n);
+        } else {
+          // Manejar el caso en el que el primer parámetro no es un número entero positivo
+          return "El primer parámetro debe ser un número entero positivo.";
+        }
+      }
+
+      // Ejemplo de uso
+      var resultado = generar_caracteres(5, "x");
+      console.log(resultado); // Devuelve 'xxxxx'
+
+      // 6.Crear una función sumaArreglo() que tome como parámetro un arreglo
+      // de números, retorna la longitud del arreglo + la suma de todos los números del arreglo.
+      function sumaArreglo(arreglo) {
+        // Verificar si el parámetro es un arreglo
+        if (!Array.isArray(arreglo)) {
+          return "El parámetro debe ser un arreglo de números.";
+        }
+
+        // Calcular la longitud del arreglo
+        const longitud = arreglo.length;
+
+        // Calcular la suma de los elementos del arreglo
+        const suma = arreglo.reduce((total, numero) => total + numero, 0);
+
+        // Retornar la longitud más la suma
+        return longitud + suma;
+      }
+
+      // Ejemplo de uso
+      var arregloEjemplo = [1, 2, 3, 4, 5];
+      var resultado = sumaArreglo(arregloEjemplo);
+      console.log(resultado); // Devuelve 20 (5 + 1 + 2 + 3 + 4 + 5)
+
+      // 7.Crear una función multiplicarArreglo() que tome como parámetro un
+      // arreglo de números, retornar la multiplicación del número menor del
+      // arreglo y el número mayor del arreglo.
+      function multiplicarArreglo(arreglo) {
+        // Verificar si el parámetro es un arreglo y tiene al menos dos elementos
+        if (!Array.isArray(arreglo) || arreglo.length < 2) {
+          return "El parámetro debe ser un arreglo con al menos dos números.";
+        }
+
+        // Encontrar el número menor y el número mayor del arreglo
+        const numeroMenor = Math.min(...arreglo);
+        const numeroMayor = Math.max(...arreglo);
+
+        // Retornar la multiplicación del número menor y el número mayor
+        return numeroMenor * numeroMayor;
+      }
+
+      // Ejemplo de uso
+      var arregloEjemplo = [3, 1, 7, 5, 2];
+      var resultado = multiplicarArreglo(arregloEjemplo);
+      console.log(resultado); // Devuelve 21 (3 * 7)
+
+      // 8. Crear una función con el nombre de booleanoArray() que tome dos
+      // arreglos de números como parámetro y que retorna un booleano, unir los dos arreglos en uno solo, si la longitud de el nuevo arreglo es mayor o igual a 10 que retorne true si es menor a 10 que retorne false.
+      function booleanoArray(arr1, arr2) {
+        // Verificar si los parámetros son arreglos
+        if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+          return "Ambos parámetros deben ser arreglos de números.";
+        }
+
+        // Unir los dos arreglos en uno solo
+        const nuevoArreglo = arr1.concat(arr2);
+
+        // Verificar la longitud del nuevo arreglo y retornar el booleano correspondiente
+        return nuevoArreglo.length >= 10;
+      }
+
+      // Ejemplo de uso
+      const arreglo1 = [1, 2, 3, 4];
+      const arreglo2 = [5, 6, 7];
+      var resultado = booleanoArray(arreglo1, arreglo2);
+      console.log(resultado); // Devuelve true, ya que la longitud del nuevo arreglo es 7 (mayor o igual a 10)
     </script>
-    
-</body>
+  </body>
 </html>

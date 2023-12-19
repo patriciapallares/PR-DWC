@@ -1,8 +1,7 @@
-console.log("Hola hola?");
 
-function suma(a,b) {
-    return a + b;
+function cambioHTML(params) {
+
+    document.getElementById('prueba').innerHTML='ESTÁS REGISTRADO';
+    
+    alert("Registrado");
 }
-
-console.log(suma(8,2));
-

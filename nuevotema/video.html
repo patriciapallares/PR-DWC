@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body >
+
+    <h1>CAMBIO DE IMÁGENES CON JS</h1>
+    <p>Haz click sobre el botón para cambiar el vídeo</p>
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        
+        <video id="myVideo" src="video1.mp4" height="300" controls loop></video>
+        <button type="button" onclick="cambiarPic()">Cambia</button>
+
+    </div>
+    <script>
+
+        function cambiarPic() {
+            let vid = document.getElementById('myVideo');
+
+            if (vid.getAttribute("src") === "video1.mp4") {
+                vid.setAttribute("src", "video2.mp4");
+            } else {
+                vid.setAttribute("src", "video1.mp4");
+            }
+        }
+
+        function cambiarImgJose() {
+            let img = document.getElementById('myImage');
+
+            if (img.src.endsWith('dua7.jpg')) {
+                img.src = 'dua8.jpg'
+            } else {
+                img.src = 'dua7.jpg'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

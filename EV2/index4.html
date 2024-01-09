@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de aspecto</title>
+</head>
+<body id="body">
+    <h1>TEXTO</h1>
+
+    <h2 id="texto" style="font-size: 14px;">Soy un texto que cambia de tamaño</h2>
+
+ <!-- Botón para aumentar hasta el doble max, restaurar tamaño y reducir hasta la mitad max. -->
+
+    <button type="button" onclick="cambiaTamanyo('14', 'ampliar')">Ampliar</button>
+    <button type="button" onclick="cambiaTamanyo('14')">Restaurar</button>
+    <button type="button" onclick="cambiaTamanyo('14', 'reducir')">Reducir</button>
+
+    <p id="warning"></p>
+    <script src="script.js"></script>
+</body>
+</html>

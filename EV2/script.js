@@ -135,3 +135,30 @@ function cambiaTamanyoImg(tamanyo, condicion){
     img.style.width=`${tamanyoActual}px`;
 }
 
+// let array = ['Patricia', 'DAW', '16-12', '20900812E']
+
+// let texto_info = document.getElementById('texto_info')
+
+// for (let i = 0; i < array.length; i++) {
+//     texto_info.innerHTML+=`${array[i]}<br> `
+// }
+
+function agregarTexto() {
+    // Obtener el valor del input
+    var texto = document.getElementById('textoInput').value;
+
+    // Crear un elemento de párrafo
+    var parrafo = document.createElement('p');
+
+    // Asignar el texto ingresado al párrafo
+    parrafo.textContent = texto;
+
+    // Obtener el contenedor de texto mostrado
+    var contenedorTexto = document.getElementById('textoMostrado');
+
+    // Agregar el párrafo al contenedor
+    contenedorTexto.appendChild(parrafo);
+
+    // Limpiar el input después de agregar el texto
+    document.getElementById('textoInput').value = '';
+  }

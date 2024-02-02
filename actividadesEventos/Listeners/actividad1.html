@@ -1,0 +1,31 @@
+<!-- Crea usando la función addEventListener una página web que al copiar el texto te muestre por consola "has copiado el texto". -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Copiar Texto</h1>
+    <input type="text" id="texto" value="¡Copia este texto!">
+
+    <script>
+
+        function copiatexto() {
+            var inputElement = document.getElementById('texto');
+
+            inputElement.addEventListener('copy', function(event) {
+                console.log('Has copiado el texto');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', copiatexto);
+    </script>
+
+</body>
+</html>
+
+

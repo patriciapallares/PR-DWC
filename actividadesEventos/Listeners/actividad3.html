@@ -1,0 +1,39 @@
+<!-- Crea usando la función addEventListener una página web donde tienes un input y quieres 
+    ejecutar una función como por ejemplo mostrar por consola cuando se cambie su valor -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Change Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #miInput {
+            width: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Input Change Event</h1>
+    <input type="text" id="miInput" placeholder="Escribe algo">
+
+    <script>
+        // Obtén el elemento de input por su ID
+        const miInput = document.getElementById('miInput');
+
+        // Agrega un listener para el evento 'input'
+        miInput.addEventListener('input', function() {
+            // La función se ejecutará cuando el valor del input cambie
+            console.log('Se cambió el valor del input:', miInput.value);
+        });
+    </script>
+
+</body>
+</html>

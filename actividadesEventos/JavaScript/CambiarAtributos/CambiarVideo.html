@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cambio de video con Javascript</h1>
+
+  
+    <video id="myFPvideo" onclick="cambiaPic()" src="video1.mp4" width="300" controls loop></video>
+
+    <p>Haz click sobre las letra para cambiarlas</p>
+    <script>
+        function cambiaPic() {
+            var video=document.getElementById('myFPvideo');
+
+            if (video.getAttribute("src")==="video1.mp4") {
+
+                video.setAttribute("src","video2.mp4");
+                
+            }else{
+                video.setAttribute("src","video1.mp4");
+            }
+           
+        }
+    </script>
+
+
+
+</body>
+</html>

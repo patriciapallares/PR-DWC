@@ -1,0 +1,54 @@
+   
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Palabras</title>
+
+    <!-- Cree un script que tome una serie de palabras ingresadas por el usuario y almacene esas palabras en un
+    array. Posteriormente, manipule ese array para mostrar en una nueva ventana los siguientes datos: -->
+
+    <!-- a. La primera palabra ingresada por el usuario
+    b. La última palabra ingresada por el usuario.
+    c. El número de palabras presentes en el array.
+    d. Todas las palabras ordenadas alfabéticamente -->
+
+    <script>
+        function manipularPalabras() {
+            // Obtener las palabras ingresadas por el usuario
+            var inputPalabras = document.getElementById("inputPalabras").value;
+            var textoFinal= "<h1>Resultados: </h1>";
+            
+            // Dividir la cadena de entrada en un array de palabras
+            var arrayPalabras = inputPalabras.split(" ");
+
+            // Mostrar la primera palabra ingresada por el usuario
+            var primeraPalabra = arrayPalabras[0];
+            textoFinal += "<p> a. Primera palabra: " + primeraPalabra + ". </p>";
+
+            // Mostrar la última palabra ingresada por el usuario
+            var ultimaPalabra = arrayPalabras[arrayPalabras.length - 1];
+            textoFinal += "<p> b. Última palabra: " + ultimaPalabra + ". </p>";
+
+            // Mostrar el número de palabras en el array
+            var numeroPalabras = arrayPalabras.length;
+            textoFinal += "<p> c. Número de palabras: " + numeroPalabras + ". </p>";
+
+            // Ordenar alfabéticamente y mostrar todas las palabras en una nueva ventana
+            var palabrasOrdenadas = arrayPalabras.slice().sort();
+            var palabrasOrdenadasString = palabrasOrdenadas.join(", ");
+            textoFinal += "<p> d. Palabras ordenadas alfabéticamente: " + palabrasOrdenadasString +".</p>";
+
+            const nuevaventana = window.open('','Palabras', 'width=400, height=300');
+            nuevaventana.document.body.innerHTML = textoFinal
+        }
+    </script>
+</head>
+<body>
+    <h1>Manipulación de Palabras</h1>
+    <label for="inputPalabras">Ingrese palabras (separadas por espacios): </label>
+    <input type="text" id="inputPalabras">
+    <button onclick="manipularPalabras()">Procesar</button>
+</body>
+</html>

@@ -6,13 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Abrir</button>
-    <button>Cerrar</button>
-    
     <script>
-        // Genera un botón para abrir y cerrar una nueva ventana, escribe en la ventana emergente: ventana creada para publicidad
-
-
+        var ventanaEmergente;
+    
+        function abrirVentana() {
+            // Abre una nueva ventana
+            ventanaEmergente = window.open("", "_blank", "width=400, height=200");
+            ventanaEmergente.document.write("<p>Ventana creada para publicidad</p>");
+        }
+    
+        function cerrarVentana() {
+            // Cierra la ventana emergente si está abierta
+            if (ventanaEmergente) {
+                ventanaEmergente.close();
+            }
+        }
     </script>
+    
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+    <button onclick="cerrarVentana()">Cerrar Ventana</button>
 </body>
 </html>

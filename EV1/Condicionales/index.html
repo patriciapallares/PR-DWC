@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condicionales</title>
+  </head>
+  <body>
+    <script>
+      // 4. Realiza un programa que lea 3 números por consola y devuelva el mayor de ellos.
+
+      var num1 = parseFloat(prompt("Ingrese el primer número:"));
+      var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+      var num3 = parseFloat(prompt("Ingrese el tercer número:"));
+
+      // Verificar si los valores ingresados son números válidos
+      if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+        // Encontrar el número mayor
+        var mayor = Math.max(num1, num2, num3);
+
+        // Mostrar el resultado por consola
+        alert("El número mayor es: " + mayor);
+      } else {
+        console.log("Por favor, ingrese números válidos.");
+      }
+
+      // 5. Realiza un programa que lea 3 números por consola y calcule la media con
+      // decimales y sin decimales.
+
+      // Solicitar al usuario que ingrese tres números
+      var num1 = parseFloat(prompt("Ingrese el primer número:"));
+      var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+      var num3 = parseFloat(prompt("Ingrese el tercer número:"));
+
+      // Verificar si los valores ingresados son números válidos
+      if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+        // Calcular la media con decimales
+        var mediaConDecimales = (num1 + num2 + num3) / 3;
+
+        // Calcular la media sin decimales
+        var mediaSinDecimales = Math.round(mediaConDecimales);
+
+        // Mostrar los resultados por consola
+        console.log("Media con decimales: " + mediaConDecimales);
+        console.log("Media sin decimales: " + mediaSinDecimales);
+      } else {
+        console.log("Por favor, ingrese números válidos.");
+      }
+
+      // 6. Realiza un programa que determina si el número leído por consola es positivo, negativo o zero.
+      //Solicitar al usuario que ingrese un número
+
+      var numero = parseFloat(prompt("Ingrese un número:"));
+
+      // Verificar si el valor ingresado es un número válido
+      if (!isNaN(numero)) {
+        // Determinar si el número es positivo, negativo o cero
+        if (numero > 0) {
+          console.log("El número ingresado es positivo.");
+        } else if (numero < 0) {
+          console.log("El número ingresado es negativo.");
+        } else {
+          console.log("El número ingresado es igual a cero.");
+        }
+      } else {
+        console.log("Por favor, ingrese un número válido.");
+      }
+
+      // 7.Realiza un programa que lea 2 números por consola y al más grande le reste el más pequeño
+      // Solicitar al usuario que ingrese dos números
+      var num1 = parseFloat(prompt("Ingrese el primer número:"));
+      var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+      // Verificar si los valores ingresados son números válidos
+      if (!isNaN(num1) && !isNaN(num2)) {
+        // Encontrar el número más grande y el más pequeño
+        var mayor = Math.max(num1, num2);
+        var menor = Math.min(num1, num2);
+
+        // Restar el número más pequeño al más grande
+        var resultado = mayor - menor;
+
+        // Mostrar el resultado por consola
+        console.log(
+          `La resta del número más grande (${mayor}) menos el más pequeño (${menor}) es: ${resultado}`
+        );
+      } else {
+        console.log("Por favor, ingrese números válidos.");
+      }
+
+      // 8. Solicitar al usuario que ingrese la cantidad en euros
+      var euros = parseFloat(prompt("Ingrese la cantidad en euros:"));
+
+      // Tasa de cambio actual (puedes cambiar este valor según la tasa de cambio actual)
+      var tasaCambio = 1.18; // 1 euro = 1.18 dólares
+
+      // Verificar si la entrada es un número válido
+      if (!isNaN(euros)) {
+        // Convertir euros a dólares
+
+        var dolares = euros * tasaCambio;
+
+        // Mostrar el resultado por consola
+        console.log(
+          `${euros} euros son aproximadamente ${dolares.toFixed(2)} dólares.`
+        );
+      } else {
+        console.log("Por favor, ingrese una cantidad válida en euros.");
+      }
+
+      // 9. Solicitar al usuario que ingrese la cantidad en dólares
+      var dolares = parseFloat(prompt("Ingrese la cantidad en dólares:"));
+
+      // Tasa de cambio actual (puedes cambiar este valor según la tasa de cambio actual)
+      var tasaCambio = 0.85; // 1 dólar = 0.85 euros
+
+      // Verificar si la entrada es un número válido
+      if (!isNaN(dolares)) {
+        // Convertir dólares a euros
+        var euros = dolares * tasaCambio;
+
+        // Mostrar el resultado por consola
+        console.log(
+          `${dolares} dólares son aproximadamente ${euros.toFixed(2)} euros.`
+        );
+      } else {
+        console.log("Por favor, ingrese una cantidad válida en dólares.");
+      }
+
+      //10.Realiza un programa que indique si los 3 números que pedimos por teclado están
+      //ordenados de menor a mayor o no.
+
+      // Solicitar al usuario tres números por teclado
+      var num1 = parseFloat(prompt("Ingrese el primer número:"));
+      var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+      var num3 = parseFloat(prompt("Ingrese el tercer número:"));
+
+      // Verificar si los números están ordenados de menor a mayor
+      if (num1 < num2 && num2 < num3) {
+        console.log("Los números están ordenados de menor a mayor.");
+      } else {
+        console.log("Los números no están ordenados de menor a mayor.");
+      }
+
+      //11. Realiza un programa que indique si los 3 números enteros que pedimos por
+      //consola son consecutivos o no.
+
+      // Solicitar al usuario tres números enteros por consola
+      var num1 = parseInt(prompt("Ingrese el primer número entero:"));
+      var num2 = parseInt(prompt("Ingrese el segundo número entero:"));
+      var num3 = parseInt(prompt("Ingrese el tercer número entero:"));
+
+      // Verificar si los números son consecutivos
+      if (
+        (num1 + 1 === num2 && num2 + 1 === num3) ||
+        (num1 - 1 === num2 && num2 - 1 === num3)
+      ) {
+        console.log("Los números son consecutivos.");
+      } else {
+        console.log("Los números no son consecutivos.");
+      }
+
+      // 12.Realiza un programa que lea 3 números por consola y los muestre ordenados de
+      // mayor a menor.
+
+      // Solicitar al usuario tres números por consola
+      var num1 = parseFloat(prompt("Ingrese el primer número:"));
+      var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+      var num3 = parseFloat(prompt("Ingrese el tercer número:"));
+
+      // Ordenar los números de mayor a menor
+      // los números se colocan en un array y se utiliza la función sort para ordenarlos de mayor a menor.
+      var numerosOrdenados = [num1, num2, num3].sort(function (a, b) {
+        return b - a;
+      });
+
+      // Mostrar los números ordenados
+      console.log(
+        "Números ordenados de mayor a menor:",
+        numerosOrdenados[0],
+        numerosOrdenados[1],
+        numerosOrdenados[2]
+      );
+
+      // 13.Realiza un programa que lea por consola una hora (horas, minutos, segundos), y muestra por consola la hora con un segundo más.
+
+      // Solicitar al usuario una hora en formato HH:MM:SS
+      var inputHora = prompt("Ingrese la hora en formato HH:MM:SS:");
+
+      // Dividir la entrada en horas, minutos y segundos
+      var tiempo = inputHora.split(":");
+      var horas = parseInt(tiempo[0]);
+      var minutos = parseInt(tiempo[1]);
+      var segundos = parseInt(tiempo[2]);
+
+      // Incrementar los segundos
+      segundos++;
+
+      // Verificar y ajustar si es necesario
+      if (segundos === 60) {
+        segundos = 0;
+        minutos++;
+
+        if (minutos === 60) {
+          minutos = 0;
+          horas++;
+
+          if (horas === 24) {
+            horas = 0;
+          }
+        }
+      }
+
+      // Mostrar la nueva hora por consola
+      console.log(
+        "La hora con un segundo más es:",
+        horas + ":" + minutos + ":" + segundos
+      );
+
+      //         14.Realiza un programa que calcule el precio de la estancia en un camping. Leerá por
+      // consola el número de personas y días. La tarifa estándar es de 15 €/noche, pero si son
+      // más de 5 personas y se quedan al menos una semana el precio se reduce un 25%.
+
+      // Solicitar al usuario el número de personas y días por consola
+      var numeroPersonas = parseInt(prompt("Ingrese el número de personas:"));
+      var numeroDias = parseInt(prompt("Ingrese el número de días:"));
+
+      // Definir la tarifa estándar por noche
+      var tarifaPorNoche = 15;
+
+      // Calcular el precio total sin descuento
+      var precioSinDescuento = numeroPersonas * numeroDias * tarifaPorNoche;
+
+      // Verificar si se aplica el descuento (más de 5 personas y al menos una semana)
+      if (numeroPersonas > 5 && numeroDias >= 7) {
+        // Calcular el descuento del 25%
+        var descuento = 0.25 * precioSinDescuento;
+
+        // Calcular el precio total con descuento
+        var precioConDescuento = precioSinDescuento - descuento;
+
+        console.log(
+          `El precio total con un 25% de descuento es: ${precioConDescuento} €.`
+        );
+      } else {
+        console.log(
+          `El precio total sin descuento es: ${precioSinDescuento} €.`
+        );
+      }
+
+      //         15.Realiza un programa que lee el número de un mes y el año e indica por
+      // consola el número de días del mes (piensa en que el año puede ser bisiesto).
+
+      // Solicitar al usuario el número de un mes y un año por consola
+      var numeroMes = parseInt(prompt("Ingrese el número de un mes (1-12):"));
+      var año = parseInt(prompt("Ingrese un año:"));
+
+      // Verificar si el año es bisiesto
+      var esBisiesto = (año % 4 === 0 && año % 100 !== 0) || año % 400 === 0;
+
+      // Determinar el número de días del mes
+      var diasDelMes;
+
+      switch (numeroMes) {
+        case 1: // enero
+        case 3: // marzo
+        case 5: // mayo
+        case 7: // julio
+        case 8: // agosto
+        case 10: // octubre
+        case 12: // diciembre
+          diasDelMes = 31;
+          break;
+        case 4: // abril
+        case 6: // junio
+        case 9: // septiembre
+        case 11: // noviembre
+          diasDelMes = 30;
+          break;
+        case 2: // febrero
+          diasDelMes = esBisiesto ? 29 : 28;
+          break;
+        default:
+          console.log("Número de mes inválido.");
+          break;
+      }
+
+      // Mostrar el número de días del mes por consola
+      if (numeroMes >= 1 && numeroMes <= 12) {
+        console.log(
+          `El mes ${numeroMes} del año ${año} tiene ${diasDelMes} días.`
+        );
+      }
+
+      //         17.Realiza un programa que si lee por consola 0, muestra la superficie y el perímetro
+      // de un cuadrado; si lee 1, muestra la superficie y el perímetro de un rectángulo; y si lee
+      // 2, muestra la superficie de un triángulo. Todos los valores se leen por consola. Si no es
+      // una opción válida se indica por consola que ha habido un error.
+      // Solicitar al usuario ingresar un número (0, 1 o 2) por consola
+      var opcion = parseInt(
+        prompt(
+          "Ingrese 0 para cuadrado, 1 para rectángulo, o 2 para triángulo:"
+        )
+      );
+
+      // Variables para almacenar los resultados
+      var superficie, perimetro;
+
+      // Verificar la opción ingresada
+      switch (opcion) {
+        case 0:
+          // Cuadrado
+          var ladoCuadrado = parseFloat(
+            prompt("Ingrese el lado del cuadrado:")
+          );
+          superficie = ladoCuadrado * ladoCuadrado;
+          perimetro = 4 * ladoCuadrado;
+          console.log(
+            `Cuadrado - Superficie: ${superficie}, Perímetro: ${perimetro}`
+          );
+          break;
+        case 1:
+          // Rectángulo
+          var largoRectangulo = parseFloat(
+            prompt("Ingrese el largo del rectángulo:")
+          );
+          var anchoRectangulo = parseFloat(
+            prompt("Ingrese el ancho del rectángulo:")
+          );
+          superficie = largoRectangulo * anchoRectangulo;
+          perimetro = 2 * (largoRectangulo + anchoRectangulo);
+          console.log(
+            `Rectángulo - Superficie: ${superficie}, Perímetro: ${perimetro}`
+          );
+          break;
+        case 2:
+          // Triángulo
+          var baseTriangulo = parseFloat(
+            prompt("Ingrese la base del triángulo:")
+          );
+          var alturaTriangulo = parseFloat(
+            prompt("Ingrese la altura del triángulo:")
+          );
+          superficie = 0.5 * baseTriangulo * alturaTriangulo;
+          console.log(`Triángulo - Superficie: ${superficie}`);
+          break;
+        default:
+          console.log("Opción no válida. Por favor, ingrese 0, 1 o 2.");
+          break;
+      }
+
+      // 18.Realiza un programa que calcula la raíz cuadrada de un número. Si el número es
+      // negativo debe mostrar un mensaje de error.
+
+      // Solicitar al usuario ingresar un número por consola
+      var numero = parseFloat(prompt("Ingrese un número:"));
+
+      // Verificar si el número es negativo
+      if (numero >= 0) {
+        // Calcular la raíz cuadrada
+        var raizCuadrada = Math.sqrt(numero);
+        console.log(
+          `La raíz cuadrada de ${numero} es ${raizCuadrada.toFixed(2)}.`
+        );
+      } else {
+        console.log(
+          "Error: No se puede calcular la raíz cuadrada de un número negativo."
+        );
+      }
+    </script>
+  </body>
+</html>

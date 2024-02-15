@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cambio de imagen con Javascript</h1>
+    <img id="myFPimagen" onclick="cambiaPic()" src="../fotos/foto1.jpg" width="300" >
+    <p>Haz click sobre las letra para cambiarlas</p>
+    <script>
+        function cambiaPic() {
+            var imagen=document.getElementById('myFPimagen');
+            if (imagen.getAttribute("src")==="../fotos/foto1.jpg") {
+               imagen.setAttribute("src","../fotos/foto3.jpg");
+                
+            }else{
+                imagen.setAttribute("src","../fotos/foto1.jpg");
+            }
+           
+        }
+    </script>
+
+
+
+</body>
+</html>

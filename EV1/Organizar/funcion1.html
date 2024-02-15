@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        function suma(a, b) {
+            console.log(a + b);
+        }
+
+        suma(5, 6)
+
+        var resultado = suma(2, 3);
+
+
+
+        // default para nombre
+        function saludar(nombre = "world") {
+            return `Hola ${nombre}`
+        }
+
+        console.log(saludar("Patricia"));
+
+        console.log(saludar());
+
+
+
+        var valor = "global"
+
+        function funcionLocal() {
+            var valor = "local"
+            return valor
+        }
+
+        console.log(valor);
+        console.log(funcionLocal());
+        console.log(valor);
+
+
+        // volumen de un cono y mostrar por pantalla. La función tiene que retornar el volumen
+
+        var radio = 5;
+        var altura = 10;
+
+
+        // pi por radio al cuadrado, por la altura entre tres.
+
+        function volumenCono(r, h) {
+            return ((r ** 2) * Math.PI * h) / 3;
+        }
+
+        console.log(volumenCono(radio, altura));
+
+
+        num1 = 3
+        num2 = 6
+        num3 = 1
+
+        function maxDeTres(num1, num2, num3) {
+            max = num1
+
+            if (num1 > num2 && num1 > num3) {
+                max = num1;
+            }
+            if (num2 > num1 && num2 > num3) {
+                max = num2
+            } else {
+                max = num3
+            }
+
+
+            return max;
+        }
+
+        console.log(maxDeTres(num1, num2, num3));
+
+
+    </script>
+</body>
+
+</html>

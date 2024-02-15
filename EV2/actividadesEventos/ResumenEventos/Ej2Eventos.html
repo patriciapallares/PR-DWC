@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <!-- Realiza una pagina web que cambie el tamaño de un elemento al girar la rueda del raton  -->
+    <!-- FUNCIONAAAA -->
+    <style>
+        #elemento {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(23, 121, 153);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body onwheel="cambiarTamanio(event)">
+
+    <div id="elemento"></div>
+    
+      <script>
+
+var elemento = document.getElementById("elemento");
+
+function cambiarTamanio(event) {
+    // Obtener el valor de delta para determinar la dirección de la rueda
+    var delta = event.deltaY || event.detail || event.wheelDelta;
+
+    // Ajustar el tamaño del elemento basado en la dirección de la rueda
+    if (delta > 0) {
+        // Rueda hacia abajo
+        elemento.style.width = (elemento.offsetWidth * 0.9) + "px";
+        elemento.style.height = (elemento.offsetHeight * 0.9) + "px";
+    } else {
+        // Rueda hacia arriba
+        elemento.style.width = (elemento.offsetWidth * 1.1) + "px";
+        elemento.style.height = (elemento.offsetHeight * 1.1) + "px";
+    }
+}
+      </script>
+
+</body>
+</html>

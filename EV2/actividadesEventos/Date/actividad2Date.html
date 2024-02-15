@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- Muestra la fecha en la pagina web -->
+
+        <h1>Fecha Actual</h1>
+        <p id="fecha"></p>
+    
+        <script>
+            // Obtiene el elemento donde se mostrará la fecha
+            var fechaElement = document.getElementById('fecha');
+    
+            // Obtiene la fecha actual
+            var fechaActual = new Date();
+    
+            // Formatea la fecha como una cadena de texto
+            var fechaFormateada = fechaActual.toLocaleString();
+    
+            // Muestra la fecha en el elemento HTML
+            fechaElement.textContent = 'Fecha: ' + fechaFormateada;
+        </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Crea usando la función addEventListener una página web que detecte cuando el usuario presiona una tecla en el teclado. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Teclas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Detector de Teclas</h1>
+    <p>Presiona una tecla para ver la información en la consola.</p>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            console.log('Tecla presionada:', event.key);
+            console.log('Código de tecla:', event.code);
+            console.log('Código de carácter:', event.keyCode);
+        });
+    </script>
+
+</body>
+</html>

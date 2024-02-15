@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Realiza una pagina web que cambie de fotografia al pulsar enter -->
+<!-- FUNCIONAAAA -->
+
+<body onkeydown="cambiarFotografia(event)">
+
+    <img id="imagen" src="/JavaScript/fotos/foto3.jpg" alt="Imagen 1">
+
+    <script>
+        var imagenes = ["/JavaScript/fotos/foto3.jpg","/JavaScript/fotos/foto1.jpg"];
+        var indiceActual = 0;
+
+        function cambiarFotografia(event) {
+            // Verificar si la tecla presionada es Enter (código 13)
+            if (event.key === "Enter") {
+                // Cambiar la fuente de la imagen a la siguiente en el array
+                indiceActual = (indiceActual + 1) % imagenes.length;
+                document.getElementById("imagen").src = imagenes[indiceActual];
+            }
+        }
+    </script>
+
+</body>
+
+</html>

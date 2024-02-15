@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>CAMBIO DE IMÁGENES CON JS</h1>
+
+    <img id="myImage" src="dua7.jpg" height="200" onclick="cambiarPic()">
+    <p>Haz click sobre las imágenes para cambiarlas</p>
+
+    <button type="button" onclick="cambiarImgJose()">cambia la img</button>
+    <script>
+
+        function cambiarPic() {
+            let img = document.getElementById('myImage');
+
+            if (img.getAttribute("src") === "dua8.jpg") {
+                img.setAttribute("src", "dua7.jpg");
+            } else {
+                img.setAttribute("src", "dua8.jpg");
+            }
+        }
+
+        function cambiarImgJose() {
+            let img = document.getElementById('myImage');
+
+            if( img.src.endsWith('dua7.jpg')){
+                img.src = 'dua8.jpg'
+            }else{
+                img.src = 'dua7.jpg'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>CAMBIO DE IMÁGENES CON JS</h1>
+
+    <img id="myImage" src="dua7.jpg" height="200">
+    <p>Haz click sobre las imágenes para cambiarlas</p>
+    <button type="button" onclick="anteriorPic()">Anterior</button>
+
+    <button type="button" onclick="siguientePic()">Siguiente</button>
+    <script>
+
+        let current = 0;
+
+        console.log(current);
+        function siguientePic() {
+
+            let img = document.getElementById('myImage');
+
+            switch (current) {
+                case 0:
+                    img.setAttribute("src", "dua1.jpg");
+                    current++;
+                    console.log(current);
+                    break;
+
+                case 1:
+                    img.setAttribute("src", "dua2.jpeg");
+                    current++;
+                    console.log(current);
+                    break;
+
+                case 2:
+                    img.setAttribute("src", "dua4.jpg");
+                    current++;
+                    console.log(current);
+                    break;
+
+                case 3:
+                    img.setAttribute("src", "dua6.jpg");
+                    current++;
+                    console.log(current);
+                    break;
+
+                case 4:
+                    img.setAttribute("src", "dua8.jpg");
+                    current++;
+                    console.log(current);
+                    break;
+
+                case 5:
+                    img.setAttribute("src", "dua7.jpg");
+                    current = 0;
+                    console.log(current);
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        function anteriorPic() {
+
+            let img = document.getElementById('myImage');
+
+            switch (current) {
+                case 0:
+                    img.setAttribute("src", "dua1.jpg");
+                    current = 5;
+                    console.log(current);
+                    break;
+
+                case 1:
+                    img.setAttribute("src", "dua2.jpeg");
+                    current--;
+                    console.log(current);
+                    break;
+
+                case 2:
+                    img.setAttribute("src", "dua4.jpg");
+                    current--;
+                    console.log(current);
+                    break;
+
+                case 3:
+                    img.setAttribute("src", "dua6.jpg");
+                    current--;
+                    console.log(current);
+                    break;
+
+                case 4:
+                    img.setAttribute("src", "dua8.jpg");
+                    current--;
+                    console.log(current);
+                    break;
+
+                case 5:
+                    img.setAttribute("src", "dua7.jpg");
+                    current--;
+                    console.log(current);
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

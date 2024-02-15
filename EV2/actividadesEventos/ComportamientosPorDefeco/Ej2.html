@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ahora que cambie el color de un parrafo a azul -->
+   
+        <!-- Crea dos enlaces en que uno se cargue la pagina web de google y otro que ejecute un codigo y no cargue la pagina web  -->
+        <!-- evento.preventDefault() -->
+        <!-- Funcionaaaa -->
+        <a href="https://www.google.com" id="enlaceGoogle" onclick="cargarGoogle(event)">Ir a Google</a>
+        <a href="#" id="enlaceCodigo" onclick="ejecutarCodigo(event)">Ejecutar Código</a>
+    
+    <script>
+        function cargarGoogle(event) {
+        // El evento.preventDefault() evita el comportamiento predeterminado del enlace
+        event.preventDefault();
+        
+        // Redirige a la página de Google
+        window.location.href = "https://www.google.com";
+        window.location.href.color="red"
+
+    }
+    document.getElementById("enlaceGoogle").style.color = "grey";
+    
+    function ejecutarCodigo(event) {
+        // El evento.preventDefault() evita el comportamiento predeterminado del enlace
+        event.preventDefault();
+        
+        // Coloca aquí el código que deseas ejecutar
+        alert("Se ejecutó un código sin cargar una nueva página.");
+        console.log("Código ejecutado sin cargar la página.");
+    }
+    document.getElementById("enlaceCodigo").style.color = "red";
+    </script>
+    
+    
+  
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- Crea usando la función addEventListener una página web que al arrastrar la foto te muestre que has arrastrado la foto -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastrar Foto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #foto {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ddd;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Arrastra la Foto</h1>
+    <img id="foto" src="dua8.jpg" alt="Imagen para arrastrar">
+
+    <script>
+        const foto = document.getElementById('foto');
+
+        foto.addEventListener('dragstart', function(event) {
+            console.log('Has arrastrado la foto');
+            alert("Has arrastrado la foto")
+        });
+
+    </script>
+
+</body>
+</html>

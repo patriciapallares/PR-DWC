@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de aspecto</title>
+</head>
+<body id="body">
+    <h1>TEXTO</h1>
+
+    <p id="texto_tamanyo">Tamaño: </p>
+
+
+ <!-- Botón para aumentar hasta el doble max, restaurar tamaño y reducir hasta la mitad max. -->
+
+
+
+    <h1>IMAGEN</h1>
+    <button type="button" onclick="cambiaTamanyoImg('500', 'ampliar')">Ampliar</button>
+    <button type="button" onclick="cambiaTamanyoImg('500')">Restaurar</button>
+    <button type="button" onclick="cambiaTamanyoImg('500', 'reducir')">Reducir</button>
+
+    
+    <div id="imgdiv" >
+        <img id="img" src="dua8.jpg" style="width: 500px; " alt="DUA">
+    </div>
+    
+    <br>
+
+
+    <p id="warning"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de aspecto</title>
+</head>
+<body id="body">
+    
+        <h1 id="titulo"> Test</h1>
+    
+        <h2 id="pregunta1">¿2+2=4?</h2>
+        
+        <button class="boton" type="button" onclick="cambiaFondo('correcta', 'pregunta1')">Verdadero</button>
+        <button class="boton" type="button" onclick="cambiaFondo('incorrecta', 'pregunta1')">Falso</button>
+
+
+        <h2 id="pregunta2">¿2+2=5?</h2>
+        
+        <button class="boton" type="button" onclick="cambiaFondo('incorrecta', 'pregunta2')">Verdadero</button>
+        <button class="boton" type="button" onclick="cambiaFondo('correcta', 'pregunta2')">Falso</button>
+
+        <h2 id="pregunta3">¿El cielo es rojo?</h2>
+        
+        <button class="boton" type="button" onclick="cambiaFondo('incorrecta', 'pregunta3')">Verdadero</button>
+        <button class="boton" type="button" onclick="cambiaFondo('correcta', 'pregunta3')">Falso</button>
+
+        <h2 id="pregunta4">¿El cielo es azul?</h2>
+        
+        <button class="boton" type="button" onclick="cambiaFondo('correcta', 'pregunta4')">Verdadero</button>
+        <button class="boton" type="button" onclick="cambiaFondo('incorrecta', 'pregunta4')">Falso</button>
+
+        <!-- Alejandro -->
+        <h2 id="p5">¿Otra opción?</h2> 
+        
+        <button class="boton" type="button" onclick="document.getElementById('p5').style.color='green'">Verdadero</button>
+        <button class="boton" type="button" onclick="document.getElementById('p5').style.color='red'">Falso</button>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

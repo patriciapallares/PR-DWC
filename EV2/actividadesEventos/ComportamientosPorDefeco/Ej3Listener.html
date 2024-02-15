@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- crea dos funciones que al pulsar un boton te diga por pantalla Hola mundo y otra boton con Hola otra vez
+    addEventListener -->
+    <button id="botonHola">Decir Hola Mundo</button>
+    <button id="botonHolaOtraVez">Decir Hola Otra Vez</button>
+    <script>
+        // Función para saludar con "Hola Mundo"
+        function decirHola() {
+            alert("Hola Mundo");
+        }
+
+        // Función para saludar con "Hola Otra Vez"
+        function decirHolaOtraVez() {
+            alert("Hola Otra Vez");
+        }
+
+        // Obtener los botones por su id y agregar eventos
+        document.getElementById("botonHola").addEventListener("click", decirHola);
+        document.getElementById("botonHolaOtraVez").addEventListener("click", decirHolaOtraVez);
+    </script>
+</body>
+
+</html>

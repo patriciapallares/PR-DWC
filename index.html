@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 13.Realiza un programa que lea por consola una hora (horas, minutos, segundos), y muestra por consola la hora con un segundo más.
+
+      // Solicitar al usuario una hora en formato HH:MM:SS
+      var inputHora = prompt("Ingrese la hora en formato HH:MM:SS:");
+
+      // Dividir la entrada en horas, minutos y segundos
+      var tiempo = inputHora.split(":");
+      var horas = parseInt(tiempo[0]);
+      var minutos = parseInt(tiempo[1]);
+      var segundos = parseInt(tiempo[2]);
+
+      // Incrementar los segundos
+      segundos++;
+
+      // Verificar y ajustar si es necesario
+      if (segundos === 60) {
+        segundos = 0;
+        minutos++;
+
+        if (minutos === 60) {
+          minutos = 0;
+          horas++;
+
+          if (horas === 24) {
+            horas = 0;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

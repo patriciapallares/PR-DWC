@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
+    input {
+        padding: 8px;
+        margin: 5px;
+    }
+</style>
+<body>
+    <!-- Crear programa en una pagina web donde el usuario introduce su altura (cm), edad sexo ypeso actual, debe aparecer un boton de calcular y otro de reset. El 
+    programa responde con referencia de peso aproximado -->
+
+    <!-- Funcionaaaa -->
+    
+    <h1>Calculadora de Peso</h1>
+
+    <form style="display: flex;flex-direction: column; width: 30vw; justify-content: center; align-items: center;" onsubmit="calcularPeso(); return false;">
+        <label for="alturaInput">Altura (cm):</label>
+        <input type="number" id="alturaInput" required />
+
+        <label for="edadInput">Edad:</label>
+        <input type="number" id="edadInput" required />
+
+        <label for="sexoInput">Sexo:</label>
+        <select id="sexoInput" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+
+        <label for="pesoInput">Peso Actual (kg):</label>
+        <input type="number" id="pesoInput" required />
+
+        <button type="submit">Calcular</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+
+    <p id="resultadoPeso"></p>
+
+    <script>
+        function calcularPeso() {
+            const altura = parseFloat(document.getElementById('alturaInput').value);
+            const edad = parseInt(document.getElementById('edadInput').value);
+            const sexo = document.getElementById('sexoInput').value;
+            const peso = parseFloat(document.getElementById('pesoInput').value);
+
+            let referenciaPeso;
+
+            // Fórmula de referencia de peso aproximado (puedes ajustar según necesites)
+            if (sexo === 'masculino') {
+                referenciaPeso = (altura - 100 + edad / 10) * 0.9;
+            } else if (sexo === 'femenino') {
+                referenciaPeso = (altura - 100 + edad / 10) * 0.85;
+            }
+
+            const diferencia = peso - referenciaPeso;
+
+            if (diferencia > 0) {
+                document.getElementById('resultadoPeso').textContent = `Estás por encima del peso recomendado. Deberías considerar bajar ${diferencia.toFixed(2)} kg.`;
+            } else if (diferencia < 0) {
+                document.getElementById('resultadoPeso').textContent = `Estás por debajo del peso recomendado. Deberías considerar subir ${Math.abs(diferencia).toFixed(2)} kg.`;
+            } else {
+                document.getElementById('resultadoPeso').textContent = 'Tu peso está en el rango recomendado.';
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('alturaInput').value = '';
+            document.getElementById('edadInput').value = '';
+            document.getElementById('sexoInput').value = 'masculino';
+            document.getElementById('pesoInput').value = '';
+            document.getElementById('resultadoPeso').textContent = '';
+        }
+    </script>
+</body>
+</html>

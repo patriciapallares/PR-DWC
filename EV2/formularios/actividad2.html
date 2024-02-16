@@ -1,0 +1,59 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Matemática</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Desarrolla una página interactiva que actue como una calculadora de fórmulas matemáticas, permitiendo al usuario ingresar una expresión matemática en un campo de texto, evaluarla al hacer click en un botón y mostrar el resultado en otro campo de texto. -->
+
+  <h1>Calculadora Matemática</h1>
+  
+  <label for="expresion">Ingresa la expresión matemática:</label>
+  <input type="text" id="expresion" placeholder="Ejemplo: 2 + 3 * (4 - 1)">
+  
+  <button onclick="calcular()">Calcular</button>
+  
+  <label for="resultado">Resultado:</label>
+  <input type="text" id="resultado" readonly>
+
+  <script>
+    function calcular() {
+      // Obtén la expresión del campo de texto
+      var expresion = document.getElementById("expresion").value;
+
+      try {
+        // Evalúa la expresión y muestra el resultado
+        var resultado = eval(expresion);
+        document.getElementById("resultado").value = resultado;
+      } catch (error) {
+        // Maneja errores de expresión inválida
+        document.getElementById("resultado").value = "Error";
+      }
+    }
+  </script>
+
+</body>
+</html>

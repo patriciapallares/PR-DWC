@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Simple</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    input, label {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulario Simple</h1>
+
+  <form id="miFormulario" onsubmit="return validarFormulario()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" pattern="[0-9]+" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" required>
+
+    <label>
+      <input type="checkbox" id="checkbox" required>
+      Acepto los términos y condiciones
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    function validarFormulario() {
+      // Obtén los valores de los campos
+      var nombre = document.getElementById("nombre").value;
+      var telefono = document.getElementById("telefono").value;
+      var fecha = document.getElementById("fecha").value;
+      var checkbox = document.getElementById("checkbox").checked;
+
+      // Realiza las validaciones
+      if (nombre === "") {
+        alert("Por favor, ingresa tu nombre.");
+        return false;
+      }
+
+      if (isNaN(telefono) || telefono === "") {
+        alert("Por favor, ingresa un número de teléfono válido.");
+        return false;
+      }
+
+      if (isNaN(Date.parse(fecha))) {
+        alert("Por favor, ingresa una fecha válida.");
+        return false;
+      }
+
+      if (!checkbox) {
+        alert("Debes aceptar los términos y condiciones.");
+        return false;
+      }
+
+      // Pide confirmación antes de enviar
+      var confirmacion = confirm("¿Estás seguro de enviar el formulario?");
+      return confirmacion;
+    }
+  </script>
+
+</body>
+</html>

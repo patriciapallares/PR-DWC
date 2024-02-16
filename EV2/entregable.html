@@ -1,16 +1,126 @@
-Tener en cuenta lo siguiente:
-- Al cargarse el formulario establecer el foco en el cuadro de texto nombre.
-- Incluir mi foto, permitirá cargar una imagen.
-- El campo aficiones será un cuadro de lista que nos permitirá elegir entre los siguientes
-valores: música, lectura y deporte. Al elegir una opción (evento onchange) nos mostrará un
-alert con los siguientes datos: longitud de la lista, número del índice seleccionado y el valor
-del índice. Ejemplo: Si seleccionamos lectura en la lista, nos debe aparecer:
-- La longitud de la lista es 3 El índice seleccionado es el 1 El valor del índice
-seleccionado es lectura
-- El campo observaciones (textarea) debe estar limitado a un tamaño de 15 caracteres.
-- Los botones “Guardar Cambios” y “Borrar datos introducidos” permitirán enviar el formulario
-y borrar todos los datos (resetear el formulario).
-- Al enviar el formulario, debemos validar los siguientes campos:
-- El campo Dni debe ser un campo obligatorio.
-- El campo Teléfono debe estar formado por nueve dígitos consecutivos y sin
-espacios ni guiones entre las cifras.
+<!-- Construir un formulario con los campos siguientes: Nombre, Apellidos, Teléfono,
+DNI, Edad, Sexo: mujer o hombre (html radio button), Incluir una foto (permite
+cargar un archivo), Acepto las condiciones (check button), Elige tu afición
+favorita (dropdown con varias opciones) y Observaciones (campo de texto) Y tener
+en cuenta lo siguiente: - Al cargarse el formulario establecer el foco en el
+cuadro de texto nombre. - Incluir mi foto, permitirá cargar una imagen. - El
+campo aficiones será un cuadro de lista que nos permitirá elegir entre los
+siguientes valores: música, lectura y deporte. Al elegir una opción (evento
+onchange) nos mostrará un alert con los siguientes datos: longitud de la lista,
+número del índice seleccionado y el valor del índice. Ejemplo: Si seleccionamos
+lectura en la lista, nos debe aparecer: - La longitud de la lista es 3 El índice
+seleccionado es el 1 El valor del índice seleccionado es lectura - El campo
+observaciones (textarea) debe estar limitado a un tamaño de 15 caracteres. - Los
+botones “Guardar Cambios” y “Borrar datos introducidos” permitirán enviar el
+formulario y borrar todos los datos (resetear el formulario). - Al enviar el
+formulario, debemos validar los siguientes campos: - El campo Dni debe ser un
+campo obligatorio. - El campo Teléfono debe estar formado por nueve dígitos
+consecutivos y sin espacios ni guiones entre las cifras. -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <style>
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body onload="focusNombre()">
+    <form id="miFormulario" onsubmit="return validarFormulario()">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" id="apellidos" name="apellidos" />
+
+      <label for="telefono">Teléfono:</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        pattern="[0-9]{9}"
+        required
+      />
+
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" required />
+
+      <label for="edad">Edad:</label>
+      <input type="text" id="edad" name="edad" />
+
+      <label>Sexo:</label>
+      <input type="radio" id="mujer" name="sexo" value="mujer" />
+      <label for="mujer">Mujer</label>
+      <input type="radio" id="hombre" name="sexo" value="hombre" />
+      <label for="hombre">Hombre</label>
+
+      <label for="foto">Incluir foto:</label>
+      <input type="file" id="foto" name="foto" />
+
+      <label>
+        Acepto las condiciones:
+        <input type="checkbox" id="acepto" name="acepto" required />
+      </label>
+
+      <label for="aficiones">Elige tu afición favorita:</label>
+      <select id="aficiones" name="aficiones" onchange="mostrarAlert()">
+        <option value="musica">Música</option>
+        <option value="lectura">Lectura</option>
+        <option value="deporte">Deporte</option>
+      </select>
+
+      <label for="observaciones">Observaciones:</label>
+      <textarea
+        id="observaciones"
+        name="observaciones"
+        maxlength="15"
+      ></textarea>
+
+      <button type="submit">Guardar Cambios</button>
+      <button type="reset">Borrar datos introducidos</button>
+    </form>
+
+    <script>
+      function focusNombre() {
+        document.getElementById("nombre").focus();
+      }
+
+      function mostrarAlert() {
+        var select = document.getElementById("aficiones");
+        var selectedIndex = select.selectedIndex;
+        var selectedValue = select.options[selectedIndex].value;
+        alert(
+          "La longitud de la lista es " +
+            select.length +
+            "\nEl índice seleccionado es el " +
+            selectedIndex +
+            "\nEl valor del índice seleccionado es " +
+            selectedValue
+        );
+      }
+
+      function validarFormulario() {
+        var telefono = document.getElementById("telefono").value;
+        if (!/^\d{9}$/.test(telefono)) {
+          alert(
+            "El campo Teléfono debe tener nueve dígitos consecutivos sin espacios ni guiones."
+          );
+          return false;
+        }
+
+        var dni = document.getElementById("dni").value;
+        if (!dni.trim()) {
+          alert("El campo DNI es obligatorio.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

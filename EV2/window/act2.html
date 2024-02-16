@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var ventanaEmergente;
+
+      function abrirVentana() {
+        // Abre una nueva ventana
+        ventanaEmergente = window.open("", "_blank", "width=400, height=200");
+        ventanaEmergente.document.write("<p>Altura Total: " + window.screen.height + " pixels</p>");
+        ventanaEmergente.document.write("<p>Anchura Total: " + window.screen.width + " pixels</p>");
+        ventanaEmergente.document.write(`<input type="button"  onclick=${cerrarVentana()}>Cerrar Ventana</button>`)
+
+      }
+
+      function cerrarVentana() {
+            // Cierra la ventana emergente si está abierta
+            if (ventanaEmergente) {
+                ventanaEmergente.close();
+            }
+        }
+
+
+    </script>
+          <button onclick="abrirVentana()">Abrir Ventana</button>
+
+  </body>
+</html>

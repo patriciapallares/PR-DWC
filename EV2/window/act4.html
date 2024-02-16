@@ -6,16 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- Ventana emergente con temporizador para cerrar automáticamente: -->
+
     <script>
-        var ventanaEmergente;
-        var ventanaEmergente2;
-        var ventanaEmergente3;
-    
         function abrirVentana() {
             // Abre una nueva ventana
             ventanaEmergente = window.open("", "_blank", "width=400, height=200");
-            ventanaEmergente2 = window.open("", "_blank", "width=400, height=200");
-            ventanaEmergente3 = window.open("", "_blank", "width=400, height=200");
+            ventanaEmergente.document.write("<p>Ventana creada para publicidad</p>");
+            setTimeout(() => {
+                cerrarVentana()
+            }, 5000);
         }
     
         function cerrarVentana() {
@@ -24,9 +25,8 @@
                 ventanaEmergente.close();
             }
         }
+        
     </script>
-    
     <button onclick="abrirVentana()">Abrir Ventana</button>
-    <button onclick="cerrarVentana()">Cerrar Ventana</button>
 </body>
 </html>

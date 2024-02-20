@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Elemento Párrafo</title>
+    <style>
+        p{
+            color: green;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="miDiv">
+        <!-- Aquí se agregará el párrafo con JavaScript -->
+    </div>
+
+    <script>
+
+        // Agrega un elemento párrafo dentro de un elemento div con createElement
+
+
+        // Crear un nuevo elemento párrafo
+        var nuevoParrafo = document.createElement("p");
+
+        // Añadir contenido al párrafo (puedes modificar el texto según tus necesidades)
+        var textoParrafo = document.createTextNode("Este es un nuevo párrafo dentro del div.");
+        nuevoParrafo.appendChild(textoParrafo);
+
+        // Obtener el div por su id
+        var miDiv = document.getElementById("miDiv");
+
+        // Agregar el párrafo al div
+        miDiv.appendChild(nuevoParrafo);
+    </script>
+</body>
+</html>

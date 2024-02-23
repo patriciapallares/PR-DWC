@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 3</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body onload="arrancar()">
+    
+<div id="secuencia">
+    <img style="display: none;" src="dua7.jpg">
+    <img src="dua8.jpg">
+</div>
+
+<script>
+    var imageSequence = document.getElementById("secuencia");
+    var images = imageSequence.getElementsByTagName("img");
+    var currentIndex = 0;
+
+    function arrancar() {
+        setInterval(function() {
+        images[currentIndex].style.display = "none";
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].style.display = "block";
+    }, 2000);
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej 1</title>
+  </head>
+  <body>
+
+    <form>
+      <label for="pass">Introduce la contraseña</label>
+      <input type="text" id="pass" name="pass" />
+      <button onclick="validarContrasenya()">Enviar</button>
+    </form>
+
+    <script>
+      document.getElementById("pass").focus();
+      let input = document.getElementById("pass");
+      let botonVerificar = document.getElementById("boton");
+
+      let passwordCorrecta = "qwerty";
+
+    function validarContrasenya() {
+        var inputPalabras = input.value;
+
+        if (inputPalabras === passwordCorrecta) {
+            alert("Bien, puedes acceder a Google")
+            
+        }else{
+            alert("Acceso no concedido.")
+        }
+    }
+    </script>
+  </body>
+</html>

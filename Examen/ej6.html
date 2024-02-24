@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 6</title>
+</head>
+<body>
+    <h1>Hora actual:</h1>
+    <div id="time"></div>
+    
+    <script>
+        function updateTime() {
+            var tiempo = new Date();
+            var hora = tiempo.getHours().toString().padStart(2, '0');
+            var mins = tiempo.getMinutes().toString().padStart(2, '0');
+            var secs = tiempo.getSeconds().toString().padStart(2, '0');
+            var time = hora + ':' + mins + ':' + secs;
+            document.getElementById('time').innerHTML = time;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

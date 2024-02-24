@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej 7</title>
+
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formulario</h1>
+    <form action="POST">
+      <label for="nombre">Nombre: </label>
+      <input type="text" name="nombre" id="nombre" required />
+
+      <label for="telefono">Teléfono: </label>
+      <input type="tel" id="telefono" name="telefono" pattern="[0-9{9}]" />
+
+      <label for="fecha">Fecha: </label>
+      <div style="display: flex; flex-direction: row">
+        <input type="text" name="fecha" id="fecha" placeholder="Día" />
+        <input type="text" name="fecha" id="fecha" placeholder="Mes" />
+        <input type="text" name="fecha" id="fecha" placeholder="Año" />
+      </div>
+
+      <div style="display: flex; flex-direction: row">
+        <label>Sexo:</label>
+        <input type="radio" name="mujer" id="mujer" value="mujer" />
+        <label for="mujer">Mujer</label>
+        <input type="radio" name="hombre" id="hombre" value="hombre" />
+        <label for="hombre">Hombre</label>
+      </div>
+      <label>
+        Mayor de 18: <input type="checkbox" name="mayor" id="mayor" />
+      </label>
+    </form>
+
+    <script>
+
+    </script>
+  </body>
+</html>

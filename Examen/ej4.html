@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej 4</title>
+  </head>
+
+  <body id="body">
+    <h1 id="texto" style="font-size: 14px">HAZ CLICK PARA CAMBIAR</h1>
+
+    <button type="button" onclick="cambiaTamanyo('14', 'ampliar')">
+      Ampliar
+    </button>
+    <button type="button" onclick="cambiaTamanyo('14')">Restaurar</button>
+    <button type="button" onclick="cambiaTamanyo('14', 'reducir')">
+      Reducir
+    </button>
+
+    <p id="warning"></p>
+
+    <script>
+      let tamanyoActual = 0;
+
+
+      function cambiaTamanyo(tamanyo, condicion) {
+        console.log(tamanyoActual);
+
+        const MAX_TAMANYO = tamanyo * 2;
+        const MIN_TAMANYO = tamanyo / 2;
+        let texto = document.getElementById("texto");
+        let warning = document.getElementById("warning");
+
+        if (tamanyoActual === 0) {
+          tamanyoActual = parseInt(tamanyo);
+        }
+
+        if (condicion === "ampliar") {
+          if (tamanyoActual < MAX_TAMANYO) {
+            tamanyoActual += 2;
+            warning.innerHTML = "";
+          } else {
+            warning.innerHTML = "Máximo alcanzado, reduce o restaura.";
+          }
+        } else if (condicion === "reducir") {
+          if (tamanyoActual > MIN_TAMANYO) {
+            tamanyoActual -= 2;
+            warning.innerHTML = "";
+          } else {
+            warning.innerHTML = "Mínimo alcanzado, amplía o restaura.";
+          }
+        } else {
+          tamanyoActual = parseInt(tamanyo);
+          warning.innerHTML = "";
+        }
+
+        texto.style.fontSize = `${tamanyoActual}px`;
+      }
+    </script>
+  </body>
+</html>

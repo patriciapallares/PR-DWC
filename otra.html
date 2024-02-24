@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ventana Emergente</title>
+  </head>
+  <body>
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+    <button onclick="cerrarVentana()">Cerrar Ventana</button>
+
+    <script>
+      let ventanaTest; // Variable para almacenar la referencia de la ventana
+
+      function abrirVentana() {
+        // Abrir la ventana con propiedades específicas
+        ventanaTest = window.open("", "Ventana Test", "width=300,height=200");
+
+        // Escribir en la ventana
+        ventanaTest.document.write(
+          "<h1>Se usan las propiedades: height=200; width=300</h1>"
+        );
+      }
+
+      function cerrarVentana() {
+        // Cerrar la ventana si está abierta
+        if (ventanaTest && !ventanaTest.closed) {
+          ventanaTest.close();
+        }
+      }
+    </script>
+  </body>
+</html>
